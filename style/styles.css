@@ -1,0 +1,80 @@
+@font-face {
+    font-family: "custom";
+    src: url("./Policedecaractere.ttf");
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "custom";
+}
+
+body {
+    background-color: var(grey);
+    font-family: black;
+    color: black;
+}
+
+
+header {
+    background-color: var(grey);
+}
+
+h1 {
+    font-family: "script", sans-serif;
+}
+
+#inter1 {
+    background-image: url("../assets/imagedelivre.jpeg");
+}
+
+#inter2 {
+    background-image: url("../assets/imagedelivre.jpeg")
+}
+
+#inter3 {
+    background-image: url("../assets/imagedelivre.jpeg")
+}
+
+#inter4 {
+    background-image: url("../assets/imagedelivre.jpeg")
+}
+
+.inter-article {
+    align-items: end;
+    width: 100vw;
+    aspect-ratio: 3/1;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    width: 75%;
+    padding: 30px;
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: grey;
+    margin: 10px;
+}
+
+.art-illust {
+    display: block;
+    width: 45%;
+}
+
+.art-text {
+    width: 45%;
+}
+
+footer {
+    background-color: grey;
+}
