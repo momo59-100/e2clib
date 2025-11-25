@@ -1,9 +1,24 @@
+/* --------------------------------------------------
+   POLICE PERSONNALISÉE
+-------------------------------------------------- */
 @font-face {
     font-family: "custom";
-    src: url("./Policedecaractere.ttf");
+    src: url("../assets/Policedecaractere.ttf") format("truetype");
 }
 
+/* --------------------------------------------------
+   VARIABLES GLOBALES
+-------------------------------------------------- */
+:root {
+    --grey: #e5e5e5;
+    --text: #111;
+    --card: #fff;
+    --shadow: rgba(0, 0, 0, 0.2);
+}
 
+/* --------------------------------------------------
+   RESET
+-------------------------------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -11,70 +26,214 @@
 }
 
 body {
-    font-family: "custom";
+    font-family: "custom", sans-serif;
+    background-color: var(--grey);
+    color: var(--text);
 }
 
-body {
-    background-color: var(grey);
-    font-family: black;
-    color: black;
-}
-
-
+/* --------------------------------------------------
+   HEADER
+-------------------------------------------------- */
 header {
-    background-color: var(grey);
+    width: 100%;
+    padding: 20px 30px;
+    background-color: var(--grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+
+.header-title {
+    width: 35%;
+    display: flex;
+    align-items: center;
+}
+
+.header-title img {
+    width: 15%;
+    border-radius: 15%;
 }
 
 h1 {
-    font-family: "script", sans-serif;
+    font-size: 2.5rem;
+    margin-left: 10px;
 }
 
-#inter1 {
-    background-image: url("../assets/imagedelivre.jpeg");
+/* Navigation */
+nav {
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-#inter2 {
-    background-image: url("../assets/imagedelivre.jpeg")
+header nav a {
+    margin-left: 20px;
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-#inter3 {
-    background-image: url("../assets/imagedelivre.jpeg")
+header nav a:hover {
+    text-decoration: underline;
 }
 
-#inter4 {
-    background-image: url("../assets/imagedelivre.jpeg")
+/* --------------------------------------------------
+   BOUTONS
+-------------------------------------------------- */
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 10px;
+    min-width: 120px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 15px;
+    cursor: pointer;
 }
 
+/* Bouton noir */
+.btn-dark {
+    background-color: #000;
+    color: #fff;
+}
+
+.btn-dark:hover {
+    color: #dcdcdc;
+    border: 2px solid #fff;
+}
+
+/* Bouton blanc */
+.btn-light {
+    background-color: #fff;
+    color: #000;
+}
+
+/* --------------------------------------------------
+   MAIN
+-------------------------------------------------- */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12vh;
+}
+
+main>* {
+    margin: 20px 25px 0 35px;
+}
+
+/* --------------------------------------------------
+   IMAGES D'INTER-ARTICLES
+-------------------------------------------------- */
 .inter-article {
-    align-items: end;
-    width: 100vw;
-    aspect-ratio: 3/1;
-    background-repeat: no-repeat;
-    background-size: cover;
+    width: 100%;
+    height: 25vh;
+    background: url("../assets/imagedelivre.jpeg") center/cover no-repeat;
+    background-attachment: fixed;
+    background-position-y:center;
 }
 
+/* --------------------------------------------------
+   ARTICLES
+-------------------------------------------------- */
 article {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
     width: 75%;
     padding: 30px;
-    background-color: grey;
+    margin: 20px auto;
+    background-color: var(--card);
     border-radius: 10px;
-    box-shadow: grey;
-    margin: 10px;
+    box-shadow: 0px 0px 12px var(--shadow);
+}
+
+.art-text,
+.art-illust {
+    width: 48%;
 }
 
 .art-illust {
-    display: block;
-    width: 45%;
+    border-radius: 10px;
 }
 
-.art-text {
-    width: 45%;
-}
-
+/* --------------------------------------------------
+   FOOTER
+-------------------------------------------------- */
 footer {
-    background-color: grey;
+    text-align: center;
+    padding: 20px;
+    background-color: #dcdcdc;
+    margin-top: 40px;
+    position: relative;
+    top: 10vh;
+    display: flex;
+    height: 10vh;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.foot.right{
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+width: 20%;
+padding: 10px;    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--card);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 12px var(--shadow);
+    max-width: 400px;
+    margin: 0 auto 30px auto;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: "custom", sans-serif;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+form button.btn-dark {
+    background-color: #000;
+    color: #fff;
+}
+
+form button.btn-dark:hover {
+    color: #dcdcdc;
+    border: 2px solid #fff;
+}
+
+form button.btn-light {
+    background-color: #fff;
+    color: #000;
+}
+
+form button.btn-light:hover {
+    background-color: #e5e5e5;
 }
